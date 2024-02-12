@@ -12,6 +12,7 @@ namespace WinScrabble
     public class Joueur
     {
         #region attributs privés
+      
         private string nom;             // nom du joueur 
         private List<string> lesMots;   // liste des mots proposés par le joueur
         private int totalPoints;        // nombre total de points du joueur
@@ -38,7 +39,8 @@ namespace WinScrabble
         /// <param name="unMot">mot proposé par le joueur</param>
         public void AjouterMot(string unMot)
         {
-            //TODO
+            this.lesMots.Add(unMot);
+            this.totalPoints = this.totalPoints + Utilitaire.PointsMot(unMot);
         }
 
         /// <summary>
@@ -47,8 +49,8 @@ namespace WinScrabble
         /// <returns>nombre total de points du joueur</returns>
         public int GetTotalPoints()
         {
-            //TODO
-            return 0;
+            
+            return this.totalPoints;
         }
 
         /// <summary>
@@ -57,8 +59,8 @@ namespace WinScrabble
         /// <returns>nombre de mots du joueur</returns>
         public int GetNbMots()
         {
-            //TODO
-            return 0;
+            
+            return this.lesMots.Count;
         }
         /// <summary>
         /// retourne la liste des mots du joueur
@@ -66,8 +68,8 @@ namespace WinScrabble
         /// <returns>liste de mots du joueur</returns>
         public List<string> GetLesMots()
         {
-            //TODO
-            return null;
+            
+            return this.lesMots;
         }
 
         /// <summary>
@@ -77,8 +79,20 @@ namespace WinScrabble
         /// <returns>mot qui a rapporté le plus grand nombre de points</returns>
         public string MotMeilleur()
         {
-            //TODO
-            return "";
+            int pointsMax = 0;
+            string meilleurMot = "";
+
+            foreach (string unMot in this.lesMots)
+            {
+                
+
+                if (Utilitaire.PointsMot(unMot) > pointsMax)
+                {
+                    pointsMax = Utilitaire.PointsMot(unMot);
+                    meilleurMot = unMot;
+                }
+            }
+            return meilleurMot;
         }
         #endregion
     }
