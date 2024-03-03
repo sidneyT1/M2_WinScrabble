@@ -16,7 +16,7 @@ namespace WinScrabble
         /// </summary>
         /// <param name="l">Lettre de type char</param>
         /// <returns>Nombre de points rapportés par la lettre</returns>
-        private static int PointsLettre(char l)
+        public static int PointsLettre(char l)
         {
             int p;
             if (l == 'D' || l == 'G' || l == 'M')

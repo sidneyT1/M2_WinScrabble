@@ -11,9 +11,10 @@ namespace WinScrabble
     /// </summary>
     public class Joueur
     {
+        
         #region attributs privés
-      
-        private string nom;             // nom du joueur 
+
+        public string nom;             // nom du joueur 
         private List<string> lesMots;   // liste des mots proposés par le joueur
         private int totalPoints;        // nombre total de points du joueur
         #endregion
