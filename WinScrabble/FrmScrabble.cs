@@ -69,7 +69,14 @@ namespace WinScrabble
                 int scoreJoueur = joueurActuel.GetTotalPoints(); 
                 AfficherScore(scoreJoueur);
 
-                
+                string lettres = "";
+                for (int i = 0; i < 7; i++)
+                {
+                    lettres += (char)('A' + random.Next(26));
+                }
+                txtLettres.Text = lettres;
+
+
                 if (joueurActuel == J1)
                 {
                     joueurActuel = J2;
